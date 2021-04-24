@@ -80,4 +80,35 @@ class Stock(db.Model):
     owner = db.Column(db.Integer, db.ForeignKey('users.id'))
     company_name = db.Column(db.Text, nullable=False, unique=True)
     ticker_symbol = db.Column(db.Text, nullable=False, unique=True)
-    price = db.Column(db.Float)
+
+
+
+# class UserStock(db.Model):
+#     """UserStocks model"""
+
+#     __tablename__ = "users_stocks"
+
+#     #id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+#     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), primary_key=True)
+
+#     stock_id = db.Column(db.Integer, db.ForeignKey('stocks.id'), primary_key=True)
+#     #bob = db.relationship('Stock', backref='users')
+
+
+
+
+# class Transaction(db.Model):
+#     """Transaction Model"""
+
+#     __tablename__ = "transactions"
+
+#     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+#     #timestamp = db.Column(db.Datetime, default=datetime.utcnow())
+#     transaction_type = db.Column(db.Text, nullable=False)
+#     stock_ticker = db.Column(db.Text, nullable=False)
+#     transacted_shares = db.Column(db.Float, nullable=False)
+#     transacted_price_share = db.Column(db.Float, nullable=False)
+#     transaction_fees = db.Column(db.Float, nullable=False)
+#     stock_split_ratio = db.Column(db.Float, nullable=False)
+
+    #user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
